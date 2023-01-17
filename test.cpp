@@ -328,7 +328,7 @@ bool badFormatStartTest()
         if(strcmp(e.what(),"Deck File Error: File format error in line 1")==0)
         {
             flag = true;
-        }
+        } 
     }
     return flag;
 }
@@ -352,5 +352,5 @@ int main(){
     run_test(roundLimitTest,"Round upper limit test");
     run_test(allTenTest,"All reach lvl 10 test");
     run_test(badPlayerInputTest,"Bad player input test");
-    return 0;
+    return 0; 
 }
