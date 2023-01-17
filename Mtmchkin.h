@@ -10,6 +10,18 @@
 
 class Mtmchkin{
 
+Card m_gremlin(Gremlin,Gremlin_stats(5,2,10,0,0,0,0));
+Card m_witch(Witch,Witch_stats(11,2,10,0,0,0,-1));
+Card m_dragon(Dragon,Dragon_stats(25,1000,0,0,0,0,0));
+Card m_merchant(Merchant,Merchant_stats(0,0,0,5,10,1,1));
+Card m_treasure(Treasure,Treasure_stats(0,10,0,0,0,0,0));
+Card m_well(Well,Well_stats(0,0,10,0,0,0,0));
+Card m_barfight(Barfight,Barfight_stats(0,0,10,0,0,0,0));
+Card m_mana(Mana,Mana_stats(0,0,0,0,0,10,0));
+
+int m_N_rounds;
+int m_size=0;
+Player* m_leaderBoaed;
 std::queue<Card*> *m_deck;
 std::queue<Player*> *m_players;
 

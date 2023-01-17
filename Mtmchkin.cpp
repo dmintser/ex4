@@ -1,6 +1,7 @@
 #include "Mtmchkin.h"
 
-Mtmchkin::Mtmchkin(const std::string &fileName)
+Mtmchkin::Mtmchkin(const std::string &fileName):
+    m_N_rounds(0)
 {
     printStartGameMessage();
     int input;
@@ -11,22 +12,21 @@ Mtmchkin::Mtmchkin(const std::string &fileName)
         printInvalidTeamSize();
         std::cin>>input;
     }
+
+    m_size=input;
+    Player* leaderBoard = new Player[input];//throw bad alloc
+    m_leaderBoaed=leaderBoard;
+
     std::string name, n_class;
     for(int i=0;i<input;i++)
     {
         std::cin>>name;//needs to be checked
         std::cin>>n_class;//needs to be checked
-        m_players->push(Player(name,n_class));
+        Player* player = new Player(name,n_class);
+        m_leaderBoaed[i]=player;
+        m_players->push(player);
     }
 
-    Card gremlin(Gremlin,Gremlin_stats(5,2,10,0,0,0,0));
-    Card witch(Witch,Witch_stats(11,2,10,0,0,0,-1));
-    Card dragon(Dragon,Dragon_stats(25,1000,0,0,0,0,0));
-    Card merchant(Merchant,Merchant_stats(0,0,0,5,10,1,1));
-    Card treasure(Treasure,Treasure_stats(0,10,0,0,0,0,0));
-    Card well(Well,Well_stats(0,0,10,0,0,0,0));
-    Card barfight(Barfight,Barfight_stats(0,0,10,0,0,0,0));
-    Card mana(Mana,Mana_stats(0,0,0,0,0,10,0));
 
     std::ifstream source(fileName);
     char line[256];
@@ -35,28 +35,28 @@ Mtmchkin::Mtmchkin(const std::string &fileName)
         switch(line)
         {
             case "Gremlin":
-                m_deck->push(&gremlin);
+                m_deck->push(&m_gremlin);
                 break;
             case "Witch":
-                m_deck->push(&witch);
+                m_deck->push(&m_witch);
                 break;
             case "Dragon":
-                m_deck->push(&dragon);
+                m_deck->push(&m_dragon);
                 break;
             case "Merchant":
-                m_deck->push(&merchant);
+                m_deck->push(&m_merchant);
                 break;
             case "Treasure":
-                m_deck->push(&treasure);
+                m_deck->push(&m_treasure);
                 break;
             case "Well":
-                m_deck->push(&well);
+                m_deck->push(&m_well);
                 break;
             case "Barfight":
-                m_deck->push(&barfight);
+                m_deck->push(&m_barfight);
                 break;
             case "Mana":
-                m_deck->push(&mana);
+                m_deck->push(&m_mana);
                 break;
             default:
                 //probably throw some exeption
@@ -67,3 +67,10 @@ Mtmchkin::Mtmchkin(const std::string &fileName)
 
 
 }
+
+int Mtmchkin::getNumberOfRounds() const
+{
+    return m_N_rounds;
+}
+
+

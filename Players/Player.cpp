@@ -45,9 +45,6 @@ Player &Player::operator=(const Player &other) {
 Player::~Player() { delete[] m_name; }
 
 void Player::printInfo() const {
-
-  void printPlayerInfo(const char *name, int level, int force, int hp,
-                       int coins);
   printPlayerInfo(m_name, m_level, m_force, m_hp, m_coins);
   //    cout << "Player Details:" << endl;
   //    cout << "Name: " << name << endl;

@@ -3,8 +3,10 @@
 
 #include <cstring>
 #include <string>
-
+#include <iostream>
+#include "utilities.h"
 class Player {
+protected:
   char *m_name;
   int m_level;
   int m_force;
@@ -22,12 +24,13 @@ public:
   void levelUp();
   int getLevel() const;
   void buff(const int forcePoints);
-  void heal(const int healPoint);
+  virtual void heal(const int healPoint);
   void damage(const int damagePoints);
   bool isKnockedOut() const;
-  void addCoins(const int coins);
+  virtual void addCoins(const int coins);
   bool pay(const int coins);
-  int getAttackStrength() const;
+  virtual int getAttackStrength() const;
+  virtual std::ostream& operator<<(const Player& pl)=0; 
 };
 
 #endif // PLAYER_H
