@@ -14,7 +14,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     }
 
     m_size=input;
-    Player* leaderBoard = new Player[input];//throw bad alloc
+    Player** leaderBoard = new Player*[input];//throw bad alloc
     m_leaderBoaed=leaderBoard;
 
     std::string name, n_class;

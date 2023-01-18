@@ -5,9 +5,11 @@
 
 class Warrior : public Player
 {
+
 public:
+    Warrior(const char* name);
     int getAttackStrength() const;
-    std::ostream& operator<<(const Player& pl);
+    friend std::ostream& operator<<(std::ostream& os, const Player& player);
 };
 
 

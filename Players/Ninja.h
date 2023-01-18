@@ -6,8 +6,9 @@
 class Ninja : public Player
 {
 public:
+    Ninja(const char* name);
     void addCoins(const int coins);
-    std::ostream& operator<<(const Player& pl);
+    friend std::ostream& operator<<(std::ostream& os, const Player&);
 };
 
 #endif

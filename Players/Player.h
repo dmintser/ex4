@@ -5,17 +5,20 @@
 #include <string>
 #include <iostream>
 #include "utilities.h"
+
 class Player {
 protected:
   char *m_name;
+  char *m_class;
   int m_level;
   int m_force;
   int m_maxHP;
   int m_hp;
   int m_coins;
+  
 
 public:
-  Player(const char *name,const char *n_class, int maxHP = 100, int force = 5);
+  Player(const char *name, int maxHP = 100, int force = 5);
   Player(const Player &other);
   Player &operator=(const Player &other);
   ~Player();
@@ -30,7 +33,9 @@ public:
   virtual void addCoins(const int coins);
   bool pay(const int coins);
   virtual int getAttackStrength() const;
-  virtual std::ostream& operator<<(const Player& pl)=0; 
+  virtual friend std::ostream& operator<<(std::ostream& os, const Player&)=0;
 };
+
+
 
 #endif // PLAYER_H
