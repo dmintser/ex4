@@ -4,9 +4,9 @@ Gremlin::Gremlin() :
     Card(CardType::Gremlin, CardStats(5,2,10,0,0,0,0))
 {}
 
-std::ostream& operator<<(std::ostream& os, const Card& card)
+std::ostream& Gremlin::operator<<(std::ostream& os)
 {
     printCardDetails(os,"Gremlin");
-    printMonsterDetails(os,card.getForce(),card.getDamage(), card.getLoot(),false);
+    printMonsterDetails(os,getForce(), getDamage(), getLoot(), false);
     printEndOfCardDetails(os);
 }

@@ -149,3 +149,36 @@ void Card::printInfo() const
   return;
 }
 */
+
+std::string Card::getName() const
+{
+  switch(m_effect)
+  {
+    case CardType::Gremlin:
+      return "Gremlin";
+    case CardType::Witch:
+      return "Witch";
+    case CardType::Dragon:
+      return "Dragon";
+    case CardType::Merchant:
+      return "Merchant";
+    case CardType::Treasure:
+      return "Treasure";
+    case CardType::Well:
+      return "Well";
+    case CardType::Barfight:
+      return "Barfight";
+    case CardType::Mana:
+      return "Mana";
+    default:
+      return "Undefined Card Type";
+  }
+}
+
+
+std::ostream& Card::operator<<(std::ostream &os)
+{
+  printCardDetails(os, getName()); 
+  printEndOfCardDetails(os);
+  return os;
+}

@@ -8,7 +8,7 @@ class Ninja : public Player
 public:
     Ninja(const char* name);
     void addCoins(const int coins);
-    friend std::ostream& operator<<(std::ostream& os, const Player&);
+    std::ostream& operator<<(std::ostream& os);
 };
 
 #endif

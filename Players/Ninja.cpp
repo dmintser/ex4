@@ -11,7 +11,7 @@ void Ninja::addCoins(const int coins)
     Player::addCoins(2*coins);
 }
 
-std::ostream& operator<<(std::ostream& os, const Player& player)
+std::ostream& Ninja::operator<<(std::ostream& os)
 {
-    printPlayerDetails(os,player.m_name,player.m_class,player.m_level,player.m_force,player.m_hp,player.m_coins);
+    printPlayerDetails(os, m_name, m_class, m_level, m_force, m_hp, m_coins);
 }

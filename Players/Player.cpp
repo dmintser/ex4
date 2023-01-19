@@ -61,12 +61,12 @@ void Player::levelUp() {
 int Player::getCoins() const{
   return m_coins;
 }
-char* Player::getName()
+std::string Player::getName() const
 {
   return m_name;
 }
 
-char* Player::getClass()
+std::string Player::getClass() const
 {
   return m_class;
 }
@@ -130,4 +130,9 @@ bool Player::pay(const int coins) {
 
 int Player::getAttackStrength() const {
   return m_force + m_level; // Attack Strength = force + level
+}
+
+std::ostream& Player::operator<<(std::ostream &os)
+{
+  printPlayerDetails(os, getName(), getClass(), getLevel(), getAttackStrength(), getHP(), getCoins());
 }

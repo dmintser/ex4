@@ -39,6 +39,10 @@ public:
     *      A new instance of Mtmchkin.
     */
     explicit Mtmchkin(const std::string &fileName);
+
+    ~Mtmchkin();
+
+
     
     /*
     * Play the next Round of the game - according to the instruction in the exercise document.
@@ -79,18 +83,3 @@ bool valid_class(std::string n_class);
 
 
 #endif /* MTMCHKIN_H_ */
-
-/*
-    Gremlin gremlin;
-    Witch witch;
-    Dragon dragon;
-    Merchant merchant;
-    Treasure treasure;
-    Well well;
-    Barfight barfight;
-    Mana mana;
-
-    Warrior warrior;
-    Healer healer;
-    Ninja ninja;
-*/

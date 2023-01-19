@@ -17,7 +17,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     Player** leaderBoard = new Player*[input];//throw bad alloc
     m_leaderBoaed=leaderBoard;
 
-    char* name, *n_class;
+    char* name = NULL; 
+    std::string n_class;
     for(int i=0;i<input;i++)
     {
         printInsertPlayerMessage();
@@ -59,62 +60,94 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     }
 
     std::ifstream source(fileName);
-    char line[256];
-    while(source.getline(line,sizeof(line)))
+    int deckLine=0;
+    std::string curr_card;
+    if(source.is_open())
     {
-        if(line=="Gremlin")
+        while(std::getline(source, curr_card))
         {
-            Gremlin* gremlin = new Gremlin();
-            m_deck->push(gremlin);
+            deckLine++;
+            if(curr_card=="Gremlin")
+            {
+                Gremlin* gremlin = new Gremlin();
+                m_deck->push(gremlin);
+            }
+
+            else if(curr_card=="Witch")
+            {
+                Witch* witch = new Witch();
+                m_deck->push(witch);
+            }
+
+            else if(curr_card=="Dragon")
+            {
+                Dragon* dragon = new Dragon();
+                m_deck->push(dragon);
+            }
+
+            else if(curr_card=="Merchant")
+            {
+                Merchant* merchant= new Merchant();
+                m_deck->push(merchant);
+            }
+
+            else if(curr_card=="Treasure")
+            {
+                Treasure* treasure = new Treasure();
+                m_deck->push(treasure);
+            }
+
+            else if(curr_card=="Well")
+            {
+                Well* well = new Well();
+                m_deck->push(well);
+            }
+
+            else if(curr_card=="Barfight")
+            {
+                Barfight* barfight = new Barfight();
+                m_deck->push(barfight);
+            }
+
+            else if(curr_card=="Mana")
+            {
+                Mana* mana = new Mana();
+                m_deck->push(mana);
+            }
+
+            else
+            {
+                throw DeckFileFormatError(deckLine);
+            }
+        }
+        if(deckLine<5)
+        {
+            throw DeckFileInvalidSize();
         }
 
-        else if(line=="Witch")
-        {
-            Witch* witch = new Witch();
-            m_deck->push(witch);
-        }
-
-        else if(line=="Dragon")
-        {
-            Dragon* dragon = new Dragon();
-            m_deck->push(dragon);
-        }
-
-        else if(line=="Merchant")
-        {
-            Merchant* merchant= new Merchant();
-            m_deck->push(merchant);
-        }
-
-        else if(line=="Treasure")
-        {
-            Treasure* treasure = new Treasure();
-            m_deck->push(treasure);
-        }
-
-        else if(line=="Well")
-        {
-            Well* well = new Well();
-            m_deck->push(well);
-        }
-
-        else if(line=="Barfight")
-        {
-            Barfight* barfight = new Barfight();
-            m_deck->push(barfight);
-        }
-
-        else if(line=="Mana")
-        {
-            Mana* mana = new Mana();
-            m_deck->push(mana);
-        }
-
-        else{
-            //what should we do in case of invalid cardType?
-        }
     }
+    else
+    {
+        throw DeckFileNotFound();
+    }
+    
 
+}
+Mtmchkin::~Mtmchkin()
+{
+    delete m_leaderBoaed;
+    while((!m_deck->empty()))
+    {
+        Card* to_delete=m_deck->front();
+        delete to_delete;
+        m_deck->pop();
+    }
+    while(!(m_players->empty()))
+    {
+        Player* to_delete=m_players->front();
+        delete to_delete;
+        m_players->pop();
+    }
 }
 
 int Mtmchkin::getNumberOfRounds() const

@@ -4,8 +4,8 @@
 #ifndef EX2_Card_H
 #define EX2_Card_H
 
-#include "Player.h"
-#include "utilities.h"
+#include "../Players/Player.h"
+#include "../utilities.h"
 #include <fstream>
 #include <string>
 
@@ -85,6 +85,7 @@ public:
   int getDamage() const;
   int getForce() const;
   int getLoot() const;
+  std::string getName() const;
 
   void printInfo() const;
 
@@ -97,9 +98,9 @@ public:
    * Here we are explicitly telling the compiler to use the default methods
    */
   Card(const Card &) = default;
-  ~Card() = default;
+  virtual ~Card() = default;
   Card &operator=(const Card &other) = default;
-  virtual friend std::ostream& operator<<(std::ostream& os, const Card&)=0;
+  virtual std::ostream& operator<<(std::ostream& os);
 
 private:
   CardType m_effect;
