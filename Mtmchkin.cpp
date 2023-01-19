@@ -239,5 +239,12 @@ bool valid_class(std::string n_class)
     return (n_class=="Ninja"||n_class=="Warrior"||n_class=="Healer");
 }
 
+void Mtmchkin::printLeaderBoard() const
+{
+    printLeaderBoardStartMessage();
+    for(int i = 1; i<= m_size; i++){
+        printPlayerLeaderBoard(i, *m_leaderBoaed[i]);
+    }
+}
 
 
