@@ -100,7 +100,9 @@ public:
   Card(const Card &) = default;
   virtual ~Card() = default;
   Card &operator=(const Card &other) = default;
-  virtual std::ostream& operator<<(std::ostream& os);
+  friend std::ostream& operator<<(std::ostream& os, Card &card);
+  //virtuel??
+
 
 private:
   CardType m_effect;

@@ -6,7 +6,7 @@
 class Dragon : public Card {
 public:
   Dragon();
-  std::ostream& operator<<(std::ostream& os) override;
+  friend std::ostream& operator<<(std::ostream& os, Dragon &dragon);
 };
 
 #endif

@@ -7,7 +7,7 @@ class Gremlin : public Card
 {
     public:
     Gremlin();
-    std::ostream& operator<<(std::ostream& os) override;
+    friend std::ostream& operator<<(std::ostream& os, Gremlin &gremlin);
  
 }; 
 

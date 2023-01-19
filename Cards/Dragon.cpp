@@ -4,10 +4,10 @@ Dragon::Dragon() :
     Card(CardType::Dragon,CardStats(5,2,10,0,0,0,0))
 {}
 
-std::ostream& Dragon::operator<<(std::ostream& os)
+std::ostream& operator<<(std::ostream& os, Dragon &dragon)
 {
   printCardDetails(os,"Dragon");
-  printMonsterDetails(os, getForce(), getDamage(), getLoot(),true);
+  printMonsterDetails(os, dragon.getForce(), dragon.getDamage(), dragon.getLoot(),true);
   printEndOfCardDetails(os);
 }
 

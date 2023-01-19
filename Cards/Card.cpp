@@ -110,6 +110,7 @@ void Card::applyEncounter(Player &player) const
         player.heal(m_stats.heal);
       }
       break;
+      
   }
   return;
 }
@@ -176,9 +177,9 @@ std::string Card::getName() const
 }
 
 
-std::ostream& Card::operator<<(std::ostream &os)
+std::ostream& operator<<(std::ostream &os, Card &card)
 {
-  printCardDetails(os, getName()); 
+  printCardDetails(os, card.getName()); 
   printEndOfCardDetails(os);
   return os;
 }

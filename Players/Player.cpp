@@ -132,7 +132,8 @@ int Player::getAttackStrength() const {
   return m_force + m_level; // Attack Strength = force + level
 }
 
-std::ostream& Player::operator<<(std::ostream &os)
+std::ostream& operator<<(std::ostream &os, const Player &player)
 {
-  printPlayerDetails(os, getName(), getClass(), getLevel(), getAttackStrength(), getHP(), getCoins());
+  printPlayerDetails(os, player.getName(), player.getClass(), player.getLevel(), player.getAttackStrength(),
+  player.getHP(), player.getCoins());
 }
