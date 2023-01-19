@@ -101,7 +101,22 @@ void Player::damage(const int damagePoints) {
   m_hp -= damagePoints;
 }
 
-bool Player::isKnockedOut() const { return (m_hp <= 0); }
+int Player::doneGame() const 
+{ 
+  if(m_level>=10)
+  {
+    return 1;
+
+  }
+  else if(m_hp <= 0)
+  {
+    return 2; 
+  }
+  else
+  {
+    return 0;
+  }
+}
 
 void Player::addCoins(const int coinsEarned) { m_coins += coinsEarned; }
 

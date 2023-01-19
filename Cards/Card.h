@@ -81,6 +81,11 @@ public:
    * @return
    *      void
    */
+
+  int getDamage() const;
+  int getForce() const;
+  int getLoot() const;
+
   void printInfo() const;
 
   /*
@@ -94,6 +99,7 @@ public:
   Card(const Card &) = default;
   ~Card() = default;
   Card &operator=(const Card &other) = default;
+  virtual friend std::ostream& operator<<(std::ostream& os, const Card&)=0;
 
 private:
   CardType m_effect;

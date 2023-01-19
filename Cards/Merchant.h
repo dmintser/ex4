@@ -7,6 +7,7 @@ class Merchant : public Card
 {
     public:
     Merchant();
+    friend std::ostream& operator<<(std::ostream& os, const Card& card);
  
 }; 
 

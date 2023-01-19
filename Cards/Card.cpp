@@ -14,9 +14,11 @@ void Card::applyEncounter(Player &player) const
       {
         player.levelUp();
         player.addCoins(m_stats.loot);
+        printWinBattle(player.getName(), "Germlin");
         break;
       }
       player.damage(m_stats.hpLossOnDefeat);
+      printLossBattle(player.getName(), "Germlin");
       break;
 
     case CardType::Witch:
@@ -25,10 +27,12 @@ void Card::applyEncounter(Player &player) const
       {
         player.levelUp();
         player.addCoins(m_stats.loot);
+        printWinBattle(player.getName(), "Witch");
         break;
       }
       player.damage(m_stats.hpLossOnDefeat);
       player.buff(-1);
+      printLossBattle(player.getName(), "Witch");
       break;
 
     case CardType::Dragon:
@@ -37,9 +41,11 @@ void Card::applyEncounter(Player &player) const
       {
         player.levelUp();
         player.addCoins(m_stats.loot);
+        printWinBattle(player.getName(), "Dragon");
         break;
       }
       player.damage(player.getHP());
+      printLossBattle(player.getName(), "Dragon");
       break;
 
     case CardType::Merchant:
@@ -106,6 +112,21 @@ void Card::applyEncounter(Player &player) const
       break;
   }
   return;
+}
+int Card::getForce() const
+{
+  return m_stats.force;
+
+}
+int Card::getDamage() const
+{
+  return m_stats.hpLossOnDefeat;
+
+}
+int Card::getLoot() const
+{
+  return m_stats.loot;
+
 }
 
 /*

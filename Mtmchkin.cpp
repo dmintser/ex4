@@ -12,6 +12,8 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     }
 
     m_size=input;
+    m_start = 0;
+    m_end = input - 1;
     Player** leaderBoard = new Player*[input];//throw bad alloc
     m_leaderBoaed=leaderBoard;
 
@@ -118,6 +120,63 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
 int Mtmchkin::getNumberOfRounds() const
 {
     return m_N_rounds;
+}
+
+void Mtmchkin::playRound()
+{
+    m_N_rounds++;
+    printRoundStartMessage(m_N_rounds);
+    int num_players=m_players->size();
+    for(int i=0;i<num_players;i++)
+    {
+        
+        Player* to_play=m_players->front();
+        printTurnStartMessage(to_play->getName());
+        m_players->pop();
+        Card* to_encounter=m_deck->front();
+        m_deck->pop();
+        m_deck->push(to_encounter);
+        to_encounter->applyEncounter(*to_play);
+        if(to_play->doneGame()==1)
+        {
+            m_leaderBoaed[m_start++]=to_play;
+            for(int i=m_start;i<=m_end;i++)
+            {
+                m_leaderBoaed[i]=m_players->front();
+                m_players->pop();
+                m_players->push(m_leaderBoaed[i]);
+            }
+        }
+        else if(to_play->doneGame()==2)
+        {
+            m_leaderBoaed[m_end--]=to_play;
+            for(int i=m_start;i<=m_end;i++)
+            {
+                m_leaderBoaed[i]=m_players->front();
+                m_players->pop();
+                m_players->push(m_leaderBoaed[i]);
+            }
+            
+        }
+        else
+        {
+            m_players->push(to_play);
+        }
+    }
+    if(isGameOver())
+    {
+        printGameEndMessage();
+    }
+    printLeaderBoardStartMessage();
+    for(int i=0;i<m_size;i++)
+    {
+        printPlayerLeaderBoard(i+1,*m_leaderBoaed[i]);
+    }
+}
+
+bool Mtmchkin::isGameOver() const
+{
+    return(m_players->empty());
 }
 
 

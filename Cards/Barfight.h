@@ -7,6 +7,7 @@ class Barfight : public Card
 {
     public:
     Barfight();
+    friend std::ostream& operator<<(std::ostream& os, const Card&);
 
 }; 
 

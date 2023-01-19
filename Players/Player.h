@@ -33,7 +33,7 @@ public:
   void buff(const int forcePoints);
   virtual void heal(const int healPoint);
   void damage(const int damagePoints);
-  bool isKnockedOut() const;
+  int doneGame() const;
   virtual void addCoins(const int coins);
   bool pay(const int coins);
   virtual int getAttackStrength() const;

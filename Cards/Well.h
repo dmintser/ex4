@@ -7,6 +7,7 @@ class Well : public Card
 {
     public:
     Well();
+    friend std::ostream& operator<<(std::ostream& os, const Card& card);
 }; 
 
 #endif

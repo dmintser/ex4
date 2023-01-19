@@ -6,7 +6,7 @@
 class Dragon : public Card {
 public:
   Dragon();
-
+  friend std::ostream& operator<<(std::ostream& os, const Card&);
 };
 
 #endif
