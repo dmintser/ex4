@@ -14,5 +14,6 @@ void Healer::heal(const int healPoint)
 std::ostream& operator<<(std::ostream& os, Healer &healer)
 {
     printPlayerDetails(os, healer.m_name, healer.m_class, healer.m_level, healer.m_force, healer.m_hp, healer.m_coins);
+    return os;
 }
 

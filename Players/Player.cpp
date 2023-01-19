@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "utilities.h"
+#include "../utilities.h"
 #include <algorithm>
 
 #define MAX_LEVEL 10
@@ -42,7 +42,7 @@ Player &Player::operator=(const Player &other) {
   return *this;
 }
 
-Player::~Player() { delete[] m_name; }
+//Player::~Player() { delete[] m_name; }
 /*
 void Player::printInfo() const {
   printPlayerInfo(m_name, m_level, m_force, m_hp, m_coins);
@@ -136,4 +136,5 @@ std::ostream& operator<<(std::ostream &os, const Player &player)
 {
   printPlayerDetails(os, player.getName(), player.getClass(), player.getLevel(), player.getAttackStrength(),
   player.getHP(), player.getCoins());
+  return os;
 }

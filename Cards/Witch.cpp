@@ -9,4 +9,5 @@ std::ostream& operator<<(std::ostream& os, const Card& card)
     printCardDetails(os,"Witch");
     printMonsterDetails(os,card.getForce(),card.getDamage(), card.getLoot(),false);
     printEndOfCardDetails(os);
+    return os;
 }

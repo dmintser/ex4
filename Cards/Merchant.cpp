@@ -9,4 +9,5 @@ std::ostream& operator<<(std::ostream& os, const Card& card)
 {
     printCardDetails(os,"Merchant");
     printEndOfCardDetails(os);
+    return os;
 }

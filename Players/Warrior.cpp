@@ -15,4 +15,5 @@ int Warrior::getAttackStrength() const
 std::ostream& operator<<(std::ostream& os, const Player& player)
 {
     printPlayerDetails(os,player.m_name,player.m_class,player.m_level,player.m_force,player.m_hp,player.m_coins);
+    return os;
 }

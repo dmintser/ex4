@@ -8,5 +8,5 @@ std::ostream& operator<<(std::ostream& os, const Card& card)
 {
     printCardDetails(os,"Well");
     printEndOfCardDetails(os);
-
+    return os;
 }

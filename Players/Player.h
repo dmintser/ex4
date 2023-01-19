@@ -9,7 +9,7 @@
 class Player {
 protected:
   char* m_name;
-  char *m_class;
+  std::string m_class;
   int m_level;
   int m_force;
   int m_maxHP;

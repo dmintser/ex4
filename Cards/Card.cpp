@@ -6,6 +6,8 @@ Card::Card(CardType type, const CardStats &stats)
 void Card::applyEncounter(Player &player) const 
 {
   bool res;
+  bool isNinja, isWarrior, isHealer;
+  int num_merchant;
   switch (m_effect) 
   {
     case CardType::Gremlin:
@@ -50,7 +52,6 @@ void Card::applyEncounter(Player &player) const
 
     case CardType::Merchant:
       printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(),player.getCoins());
-      int num_merchant;
       while(!(std::cin>>num_merchant)||num_merchant<0||num_merchant>2)
       {
         printInvalidInput();
@@ -87,7 +88,7 @@ void Card::applyEncounter(Player &player) const
       player.addCoins(m_stats.loot);
       break;
     case CardType::Well:
-      bool isNinja=player.getClass()=="Ninja";
+      isNinja=(player.getClass()=="Ninja");
       printWellMessage(isNinja);
       if(!isNinja)
       {
@@ -95,7 +96,7 @@ void Card::applyEncounter(Player &player) const
       }
       break;
     case CardType::Barfight:
-      bool isWarrior = player.getClass()=="Warrior";
+      isWarrior = (player.getClass()=="Warrior");
       printBarfightMessage(isWarrior);
       if(!isWarrior)
       {
@@ -103,7 +104,7 @@ void Card::applyEncounter(Player &player) const
       }
       break;
     case CardType::Mana:
-      bool isHealer= player.getClass()=="Healer";
+      isHealer= player.getClass()=="Healer";
       printManaMessage(isHealer);
       if(isHealer)
       {

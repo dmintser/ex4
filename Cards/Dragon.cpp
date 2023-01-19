@@ -9,5 +9,6 @@ std::ostream& operator<<(std::ostream& os, Dragon &dragon)
   printCardDetails(os,"Dragon");
   printMonsterDetails(os, dragon.getForce(), dragon.getDamage(), dragon.getLoot(),true);
   printEndOfCardDetails(os);
+  return os;
 }
 

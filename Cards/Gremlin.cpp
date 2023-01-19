@@ -9,4 +9,5 @@ std::ostream& operator<<(std::ostream& os, Gremlin &gremlin)
     printCardDetails(os,"Gremlin");
     printMonsterDetails(os, gremlin.getForce(), gremlin.getDamage(), gremlin.getLoot(), false);
     printEndOfCardDetails(os);
+    return os;
 }
