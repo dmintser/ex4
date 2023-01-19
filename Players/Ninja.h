@@ -2,6 +2,7 @@
 #define NINJA_H
 
 #include "Player.h"
+#include "../utilities.h"
 
 class Ninja : public Player
 {

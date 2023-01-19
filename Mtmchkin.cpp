@@ -230,6 +230,7 @@ bool valid_name(std::string name)
             return false;
         }
     }
+    return true; //to be checked
 }
 
 

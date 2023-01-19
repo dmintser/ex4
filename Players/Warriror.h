@@ -2,6 +2,7 @@
 #define WARRIOR_H
 
 #include "Player.h"
+#include "../utilities.h"
 
 class Warrior : public Player
 {
