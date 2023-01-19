@@ -5,10 +5,8 @@
 
 class Dragon : public Card {
 public:
-  Dragon(CardType type, (25, 1000, 0, 0, 0, 0, 0));
+  Dragon();
 
-private:
-  CardType m_class;
 };
 
 #endif

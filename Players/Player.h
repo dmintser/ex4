@@ -8,7 +8,7 @@
 
 class Player {
 protected:
-  char *m_name;
+  char* m_name;
   char *m_class;
   int m_level;
   int m_force;
@@ -25,7 +25,11 @@ public:
 
   void printInfo() const;
   void levelUp();
+  int getCoins() const;
+  char* getName(); 
+  char* getClass();
   int getLevel() const;
+  int getHP() const;
   void buff(const int forcePoints);
   virtual void heal(const int healPoint);
   void damage(const int damagePoints);

@@ -1,5 +1,5 @@
-#include "Gremlin.h"
+#include "Mana.h"
 
-Gremlin::Card(CardType type) :
-    Card((0,0,0,0,0,10,0)), m_class(type);
+Mana::Mana() :
+    Card(CardType::Mana, CardStats(0,0,0,0,0,10,0))
 {}

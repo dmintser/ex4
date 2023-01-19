@@ -6,10 +6,8 @@
 class Treasure : public Card 
 {
     public:
-    Treasure(CardType type);
+    Treasure();
 
-    private:
-    CardType m_class; 
 }; 
 
 #endif

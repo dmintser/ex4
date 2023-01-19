@@ -3,40 +3,114 @@
 Card::Card(CardType type, const CardStats &stats)
     : m_effect(type), m_stats(stats) {}
 
-void Card::applyEncounter(Player &player) const {
+void Card::applyEncounter(Player &player) const 
+{
   bool res;
-  switch (m_effect) {
-  case CardType::Battle:
-    res = player.getAttackStrength() >= m_stats.force;
-    printBattleResult(res);
-    if (res) {
-      player.levelUp();
+  switch (m_effect) 
+  {
+    case CardType::Gremlin:
+      res = player.getAttackStrength() >= m_stats.force;
+      if (res) 
+      {
+        player.levelUp();
+        player.addCoins(m_stats.loot);
+        break;
+      }
+      player.damage(m_stats.hpLossOnDefeat);
+      break;
+
+    case CardType::Witch:
+      res = player.getAttackStrength() >= m_stats.force;
+      if(res)
+      {
+        player.levelUp();
+        player.addCoins(m_stats.loot);
+        break;
+      }
+      player.damage(m_stats.hpLossOnDefeat);
+      player.buff(-1);
+      break;
+
+    case CardType::Dragon:
+      res = player.getAttackStrength() >= m_stats.force;
+      if(res)
+      {
+        player.levelUp();
+        player.addCoins(m_stats.loot);
+        break;
+      }
+      player.damage(player.getHP());
+      break;
+
+    case CardType::Merchant:
+      printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(),player.getCoins());
+      int num_merchant;
+      while(!(std::cin>>num_merchant)||num_merchant<0||num_merchant>2)
+      {
+        printInvalidInput();
+      }
+      switch(num_merchant)
+      {
+        case 0:
+          printMerchantSummary(std::cout,player.getName(),0,0);
+          break;
+        case 1:
+          if(player.pay(m_stats.cost))
+          {
+            printMerchantSummary(std::cout,player.getName(),1,m_stats.cost);
+          }
+          else
+          {
+            printMerchantInsufficientCoins(std::cout);
+          }
+          break;
+        case 2:
+          if(player.pay(m_stats.cost2))
+            {
+            printMerchantSummary(std::cout,player.getName(),2,m_stats.cost2);
+            }
+            else
+            {
+              printMerchantInsufficientCoins(std::cout);
+            }
+            break;
+      }
+      break;
+    case CardType::Treasure:
+      printTreasureMessage();
       player.addCoins(m_stats.loot);
       break;
-    }
-    player.damage(m_stats.hpLossOnDefeat);
-    break;
-
-  case CardType::Heal:
-    if (player.pay(m_stats.cost)) {
-      player.heal(m_stats.heal);
-    }
-    break;
-
-  case CardType::Buff:
-    if (player.pay(m_stats.cost)) {
-      player.buff(m_stats.buff);
-    }
-    break;
-
-  case CardType::Treasure:
-    player.addCoins(m_stats.loot);
-    break;
+    case CardType::Well:
+      bool isNinja=player.getClass()=="Ninja";
+      printWellMessage(isNinja);
+      if(!isNinja)
+      {
+        player.damage(m_stats.hpLossOnDefeat);
+      }
+      break;
+    case CardType::Barfight:
+      bool isWarrior = player.getClass()=="Warrior";
+      printBarfightMessage(isWarrior);
+      if(!isWarrior)
+      {
+        player.damage(m_stats.hpLossOnDefeat);
+      }
+      break;
+    case CardType::Mana:
+      bool isHealer= player.getClass()=="Healer";
+      printManaMessage(isHealer);
+      if(isHealer)
+      {
+        player.heal(m_stats.heal);
+      }
+      break;
   }
   return;
 }
 
-void Card::printInfo() const {
+/*
+void Card::printInfo() const
+ {
   switch (m_effect) {
   case CardType::Battle:
     printBattleCardInfo(m_stats);
@@ -53,3 +127,4 @@ void Card::printInfo() const {
   }
   return;
 }
+*/

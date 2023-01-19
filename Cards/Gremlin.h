@@ -6,10 +6,8 @@
 class Gremlin : public Card 
 {
     public:
-    Gremlin(CardType type);
-
-    private:
-    CardType m_class; 
+    Gremlin();
+ 
 }; 
 
 #endif

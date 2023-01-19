@@ -6,10 +6,8 @@
 class Merchant : public Card 
 {
     public:
-    Merchant(CardType type);
-
-    private:
-    CardType m_class; 
+    Merchant();
+ 
 }; 
 
 #endif

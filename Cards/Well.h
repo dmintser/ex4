@@ -6,10 +6,7 @@
 class Well : public Card 
 {
     public:
-    Well(CardType type);
-
-    private:
-    CardType m_class; 
+    Well();
 }; 
 
 #endif

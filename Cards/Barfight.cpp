@@ -1,5 +1,5 @@
 #include "Barfight.h"
 
-Barfight::Card(CardType type) :
-    Card((0,0,10,0,0,0,0)), m_class(type);
+Barfight::Barfight() : 
+    Card(CardType::Barfight,CardStats(0,0,10,0,0,0,0))
 {}

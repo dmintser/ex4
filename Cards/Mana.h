@@ -6,10 +6,7 @@
 class Mana : public Card 
 {
     public:
-    Mana(CardType type);
-
-    private:
-    CardType m_class; 
+    Mana();
 }; 
 
 #endif

@@ -43,17 +43,12 @@ Player &Player::operator=(const Player &other) {
 }
 
 Player::~Player() { delete[] m_name; }
-
+/*
 void Player::printInfo() const {
   printPlayerInfo(m_name, m_level, m_force, m_hp, m_coins);
-  //    cout << "Player Details:" << endl;
-  //    cout << "Name: " << name << endl;
-  //    cout << "Level: " << level << endl;
-  //    cout << "Force: " << force << endl;
-  //    cout << "HP: " << hp << endl;
-  //    cout << "Coins: " << coins << endl;
-  //    cout << LINE_DIVIDER << endl;
+  
 }
+*/
 
 void Player::levelUp() {
   void levelUp();
@@ -63,8 +58,25 @@ void Player::levelUp() {
   m_level += 1;
 }
 
+int Player::getCoins() const{
+  return m_coins;
+}
+char* Player::getName()
+{
+  return m_name;
+}
+
+char* Player::getClass()
+{
+  return m_class;
+}
+
 int Player::getLevel() const { return m_level; }
 
+int Player::getHP() const
+{
+  return m_hp;
+}
 void Player::buff(const int forcePoints) { m_force += forcePoints; }
 
 void Player::heal(const int healPoint) {

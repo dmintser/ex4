@@ -6,10 +6,8 @@
 class Barfight : public Card 
 {
     public:
-    Barfight(CardType type);
+    Barfight();
 
-    private:
-    CardType m_class; 
 }; 
 
 #endif

@@ -7,14 +7,25 @@
 #include "utilities.h"
 #include "Players/Player.h"
 #include "Cards/Card.h"
+#include "Cards/Barfight.h"
+#include "Cards/Dragon.h"
+#include "Cards/Gremlin.h"
+#include "Cards/Mana.h"
+#include "Cards/Merchant.h"
+#include "Cards/Treasure.h"
+#include "Cards/Well.h"
+#include "Cards/Witch.h"
+#include "Players/Ninja.h"
+#include "Players/Healer.h"
+#include "Players/Warriror.h"
 
 class Mtmchkin{
 
-int m_N_rounds;
-int m_size=0;
-Player** m_leaderBoaed;
-std::queue<Card*> *m_deck;
-std::queue<Player*> *m_players;
+    int m_N_rounds;
+    int m_size=0;
+    Player** m_leaderBoaed;
+    std::queue<Card*> *m_deck;
+    std::queue<Player*> *m_players;
 
 public:
     
@@ -61,6 +72,23 @@ public:
     int getNumberOfRounds() const;
 };
 
+bool valid_name(std::string name);
+bool valid_class(std::string n_class);
 
 
 #endif /* MTMCHKIN_H_ */
+
+/*
+    Gremlin gremlin;
+    Witch witch;
+    Dragon dragon;
+    Merchant merchant;
+    Treasure treasure;
+    Well well;
+    Barfight barfight;
+    Mana mana;
+
+    Warrior warrior;
+    Healer healer;
+    Ninja ninja;
+*/
