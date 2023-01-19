@@ -38,7 +38,7 @@ public:
   bool pay(const int coins);
   virtual int getAttackStrength() const;
   friend std::ostream& operator<<(std::ostream& os, const Player &player);
-  //virtual std::ostream& operator<<(std::ostream& os);
+  virtual std::ostream& printPlayer(std::ostream& os) const = 0;
 };
 
 

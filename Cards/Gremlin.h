@@ -7,8 +7,8 @@ class Gremlin : public Card
 {
     public:
     Gremlin();
-    friend std::ostream& operator<<(std::ostream& os, Gremlin &gremlin);
- 
+    //friend std::ostream& operator<<(std::ostream& os, Gremlin &gremlin);
+    virtual std::ostream& printCard(std::ostream& os) const;
 }; 
 
 #endif

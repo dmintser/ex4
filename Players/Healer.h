@@ -9,10 +9,8 @@ class Healer : public Player
 public:
     Healer(const char* name);
     void heal(const int healPoint);
-    friend std::ostream& operator<<(std::ostream& os, Healer &healer);
-    
-
-    
+    //friend std::ostream& operator<<(std::ostream& os, Healer &healer);
+    virtual std::ostream& printPlayer(std::ostream& os) const;
 };
 
 

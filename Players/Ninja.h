@@ -9,7 +9,8 @@ class Ninja : public Player
 public:
     Ninja(const char* name);
     void addCoins(const int coins);
-    friend std::ostream& operator<<(std::ostream& os, Ninja &ninja);
+    //friend std::ostream& operator<<(std::ostream& os, Ninja &ninja);
+    virtual std::ostream& printPlayer(std::ostream& os) const;
 };
 
 #endif

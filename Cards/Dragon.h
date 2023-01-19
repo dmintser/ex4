@@ -6,7 +6,8 @@
 class Dragon : public Card {
 public:
   Dragon();
-  friend std::ostream& operator<<(std::ostream& os, Dragon &dragon);
+  //friend std::ostream& operator<<(std::ostream& os, Dragon &dragon);
+  virtual std::ostream& printCard(std::ostream& os) const;
 };
 
 #endif

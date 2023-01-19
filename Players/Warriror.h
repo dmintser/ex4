@@ -10,7 +10,8 @@ class Warrior : public Player
 public:
     Warrior(const char* name);
     int getAttackStrength() const;
-    friend std::ostream& operator<<(std::ostream& os, const Player& player);
+    //friend std::ostream& operator<<(std::ostream& os, const Player& player);
+    virtual std::ostream& printPlayer(std::ostream& os) const;
 };
 
 

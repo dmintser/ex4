@@ -101,6 +101,7 @@ public:
   virtual ~Card() = default;
   Card &operator=(const Card &other) = default;
   friend std::ostream& operator<<(std::ostream& os, Card &card);
+  virtual std::ostream& printCard(std::ostream& os) const = 0;
   //virtuel??
 
 

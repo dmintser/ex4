@@ -7,7 +7,8 @@ class Mana : public Card
 {
     public:
     Mana();
-    friend std::ostream& operator<<(std::ostream& os, const Card& card);
+    //friend std::ostream& operator<<(std::ostream& os, const Card& card);
+    virtual std::ostream& printCard(std::ostream& os) const;
 }; 
 
 #endif

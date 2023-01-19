@@ -180,7 +180,9 @@ std::string Card::getName() const
 
 std::ostream& operator<<(std::ostream &os, Card &card)
 {
-  printCardDetails(os, card.getName()); 
+  /*printCardDetails(os, card.getName()); 
   printEndOfCardDetails(os);
+  return os;*/
+  card.printCard(os);
   return os;
 }

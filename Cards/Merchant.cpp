@@ -5,9 +5,16 @@ Merchant::Merchant() :
 {}
 
 
-std::ostream& operator<<(std::ostream& os, const Card& card)
+/*std::ostream& operator<<(std::ostream& os, const Card& card)
 {
     printCardDetails(os,"Merchant");
+    printEndOfCardDetails(os);
+    return os;
+}*/
+
+std::ostream& Merchant::printCard(std::ostream& os) const{
+    printCardDetails(os, getName());
+    printMonsterDetails(os, getForce(), getDamage(), getLoot(), false);
     printEndOfCardDetails(os);
     return os;
 }
