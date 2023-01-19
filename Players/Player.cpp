@@ -134,7 +134,8 @@ int Player::getAttackStrength() const {
 
 std::ostream& operator<<(std::ostream &os, const Player &player)
 {
-  printPlayerDetails(os, player.getName(), player.getClass(), player.getLevel(), player.getAttackStrength(),
-  player.getHP(), player.getCoins());
+  //printPlayerDetails(os, player.getName(), player.getClass(), player.getLevel(), player.getAttackStrength(),
+  //player.getHP(), player.getCoins());
+  player.printPlayer(os);
   return os;
 }
