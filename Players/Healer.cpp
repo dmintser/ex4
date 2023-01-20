@@ -1,6 +1,6 @@
 #include "Healer.h"
 
-Healer::Healer(const char *name):
+Healer::Healer(const std::string name):
     Player(name)
 {
     m_class="Healer";

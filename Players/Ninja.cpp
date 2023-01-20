@@ -1,6 +1,6 @@
 #include "Ninja.h"
 
-Ninja::Ninja(const char* name):
+Ninja::Ninja(const std::string name):
     Player(name)
 {
     m_class="Ninja";

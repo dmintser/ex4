@@ -8,7 +8,7 @@ class Warrior : public Player
 {
 
 public:
-    Warrior(const char* name);
+    Warrior(const std::string name);
     int getAttackStrength() const;
     //friend std::ostream& operator<<(std::ostream& os, const Player& player);
     virtual std::ostream& printPlayer(std::ostream& os) const;

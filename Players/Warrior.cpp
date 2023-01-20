@@ -1,6 +1,6 @@
 #include "Warriror.h"
 
-Warrior::Warrior(const char* name):
+Warrior::Warrior(const std::string name):
     Player(name)
 {
     m_class="Warrior";

@@ -4,29 +4,32 @@
 
 #define MAX_LEVEL 10
 
-Player::Player(const char *name, int maxHP, int force)
-    : m_name(new char[strlen(name) + 1]), m_level(1), m_force(force),
+
+
+Player::Player(const std::string name, int maxHP, int force)
+    : m_name(new char[name.length() + 1]), m_level(1), m_force(force),
       m_maxHP(maxHP), m_hp(maxHP), m_coins(0) {
-  int nameLen = strlen(name);
+  int nameLen = name.length();
   for (int i = 0; i < nameLen; i++) {
     m_name[i] = name[i];
   }
-  m_name[strlen(name)] = '\0';
+  m_name[name.length()] = '\0';
 }
 
 Player::Player(const Player &other)
-    : m_name(new char[strlen(other.m_name) + 1]), m_level(other.m_level),
+    : m_name(new char[other.m_name.length() + 1]), m_level(other.m_level),
       m_force(other.m_force), m_maxHP(other.m_maxHP), m_hp(other.m_hp),
       m_coins(other.m_coins) {
-  strncpy(m_name, other.m_name, strlen(m_name) - 1);
-  m_name[strlen(m_name)] = '\0'; // to be checked
+        m_name = other.m_name;
+  //strncpy(m_name, other.m_name, m_name.length() - 1);
+  m_name[m_name.length()] = '\0'; // to be checked
 }
 
 Player &Player::operator=(const Player &other) {
   if (this == &other)
     return *this;
-  delete[] m_name;
-  int other_len = strlen(other.m_name) + 1;
+  //delete[] m_name;
+  int other_len = other.m_name.length() + 1;
   m_name = new char[other_len];
   m_name[other_len - 1] = 0;
 
@@ -41,6 +44,48 @@ Player &Player::operator=(const Player &other) {
 
   return *this;
 }
+
+
+
+
+
+// Player::Player(const std::string name, int maxHP, int force)
+//     : m_name(new char[strlen(name) + 1]), m_level(1), m_force(force),
+//       m_maxHP(maxHP), m_hp(maxHP), m_coins(0) {
+//   int nameLen = strlen(name);
+//   for (int i = 0; i < nameLen; i++) {
+//     m_name[i] = name[i];
+//   }
+//   m_name[strlen(name)] = '\0';
+// }
+
+// Player::Player(const Player &other)
+//     : m_name(new char[strlen(other.m_name) + 1]), m_level(other.m_level),
+//       m_force(other.m_force), m_maxHP(other.m_maxHP), m_hp(other.m_hp),
+//       m_coins(other.m_coins) {
+//   strncpy(m_name, other.m_name, strlen(m_name) - 1);
+//   m_name[strlen(m_name)] = '\0'; // to be checked
+// }
+
+// Player &Player::operator=(const Player &other) {
+//   if (this == &other)
+//     return *this;
+//   delete[] m_name;
+//   int other_len = strlen(other.m_name) + 1;
+//   m_name = new char[other_len];
+//   m_name[other_len - 1] = 0;
+
+//   for (int i = 0; i < other_len; i++)
+//     m_name[i] = other.m_name[i];
+
+//   m_level = other.m_level;
+//   m_force = other.m_force;
+//   m_maxHP = other.m_maxHP;
+//   m_hp = other.m_hp;
+//   m_coins = other.m_coins;
+
+//   return *this;
+// }
 
 //Player::~Player() { delete[] m_name; }
 /*

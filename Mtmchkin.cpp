@@ -14,47 +14,64 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     m_size=input;
     m_start = 0;
     m_end = input - 1;
-    Player** leaderBoard = new Player*[input];//throw bad alloc
+    Player** leaderBoard;
+    try{
+        leaderBoard = new Player*[input];//throw bad alloc
+    }
+    catch(std::bad_alloc &e)
+    {
+        std::cout << "BAD ALLOC" << std::endl;
+        throw;
+    }
     m_leaderBoaed=leaderBoard;
-
-    char* name = NULL; 
+    std::string name; 
     std::string n_class;
     for(int i=0;i<input;i++)
     {
+        std::cerr << "1234" << std::endl;
         printInsertPlayerMessage();
+        std::cerr << "1234" << std::endl;
         std::cin>>name;
+        std::cerr << name << std::endl;
         while(!valid_name(name))
         {
+            std::cerr << "Invalid!" << std::endl;
             printInvalidName();
             std::cin>>name;
         }
-
+        std::cerr << "valid!" << std::endl;
         std::cin>>n_class;
+        std::cerr << n_class << std::endl;
         while(!valid_class(n_class))
         {
             printInvalidClass();
             std::cin>>n_class;
         }
-
+        std::cerr << "valid!" << std::endl;
         if(n_class=="Ninja")
         {
             Ninja* ninja = new Ninja(name);
             m_leaderBoaed[i]= ninja;
             m_players->push(ninja);
+            std::cerr << "ninja!" << std::endl;
         }
                 
         if(n_class=="Healer")
         {
-            Healer* healer = new Healer(name);
+            Player* healer = new Healer(name);
+            std::cerr << "in!" << std::endl;
             m_leaderBoaed[i]= healer;
+            std::cerr << "in!" << std::endl;
             m_players->push(healer);
+            std::cerr << "healer!" << std::endl;
         }
-
+        std::cerr << "in!" << std::endl;
         if(n_class=="Warrior")
         {
             Warrior* warrior = new Warrior(name);
             m_leaderBoaed[i]= warrior;
             m_players->push(warrior);
+            std::cerr << "warrior!" << std::endl;
         }
 
     }

@@ -8,7 +8,7 @@
 
 class Player {
 protected:
-  char* m_name;
+  std::string m_name;
   std::string m_class;
   int m_level;
   int m_force;
@@ -18,7 +18,7 @@ protected:
   
 
 public:
-  Player(const char *name, int maxHP = 100, int force = 5);
+  Player(const std::string name, int maxHP = 100, int force = 5);
   Player(const Player &other);
   Player &operator=(const Player &other);
   virtual ~Player()=default;
