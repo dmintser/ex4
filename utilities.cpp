@@ -134,74 +134,79 @@ void printMerchantSummary(ostream &os, const string &playerName, int type, int c
 
 void printInsertPlayerMessage()
 {
-    cout << "Please insert the player name and class: " << endl;
+    std::cerr << "Please insert the player name and class: " << endl;
 }
 
 void printInvalidTeamSize()
 {
-    cout << "Invalid team size! Please enter a different size." << endl;
+    std::cerr << "Invalid team size! Please enter a different size." << endl;
 }
 
 void printInvalidClass()
 {
-    cout << "You have entered an invalid class. Please try again." << endl;
+    std::cerr << "You have entered an invalid class. Please try again." << endl;
 }
 
 void printInvalidName()
 {
-    cout << "You have entered an invalid name. Please try again." << endl;
+    std::cerr << "You have entered an invalid name. Please try again." << endl;
 }
 
 void printInvalidInput()
 {
-    cout << "You have entered an invalid input. Please try again." << endl;
+    std::cerr << "You have entered an invalid input. Please try again." << endl;
 }
 
 void printStartGameMessage()
 {
-    cout << "Welcome to the world of MtmChkin!!!" << endl;
+    std::cerr << "Welcome to the world of MtmChkin!!!" << endl;
 }
 
 void printEnterTeamSizeMessage()
 {
-    cout << "Please enter team size: (2-6)" << endl;
+    std::cerr << "Please enter team size: (2-6)" << endl;
 }
 
 void printTurnStartMessage(const string &name)
 {
-    cout << "Start of " << name << "'s turn: " << endl;
+    std::cerr << "Start of " << name << "'s turn: " << endl;
 }
 
 void printRoundStartMessage(int roundCount)
 {
-    cout << endl << "-------------------------------------------" << endl;
-    cout << "Start of round " << roundCount << ":" << endl << endl;
+    std::cerr << endl << "-------------------------------------------" << endl;
+    std::cerr << "Start of round " << roundCount << ":" << endl << endl;
 }
 
 void printWinBattle(const string &playerName, const string &monsterName)
 {
-    cout << "Player " << playerName << " has defeated " << monsterName << " and rose 1 Level!" << endl;
+    std::cerr << "Player " << playerName << " has defeated " << monsterName << " and rose 1 Level!" << endl;
 }
 
 void printLossBattle(const string &playerName, const string &monsterName)
 {
-    cout << "Player " << playerName << " has been defeated by a " << monsterName << "." << endl;
+    std::cerr << "Player " << playerName << " has been defeated by a " << monsterName << "." << endl;
 }
 
 void printLeaderBoardStartMessage()
 {
-    cout << endl << "The current ranking of the Team:" << endl;
-    cout << "Ranking    Player Name     Level     Force HP    Coins Job" << endl;
+    std::cerr << endl << "The current ranking of the Team:" << endl;
+    std::cerr << "Ranking    Player Name     Level     Force HP    Coins Job" << endl;
+    // cout << endl << "The current ranking of the Team:" << endl;
+    // cout << "Ranking    Player Name     Level     Force HP    Coins Job" << endl;
 }
 
 void printPlayerLeaderBoard(int ranking, const Player& player)
 {
-    cout << ranking << "          " << player << endl;
+    // cout << ranking << "          " << player << endl;
+    std::cerr << ranking << "          " << player << endl;
+
 }
 
 void printGameEndMessage()
 {
-    cout << "The Game has ended!!!" << endl;
+    std::cerr << "The Game has ended!!!" << endl;
+    //cout << "The Game has ended!!!" << endl;
 }
 
 

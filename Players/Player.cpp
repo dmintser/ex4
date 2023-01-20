@@ -8,7 +8,7 @@
 
 Player::Player(const std::string name, int maxHP, int force)
     : m_name(name), m_level(1), m_force(force),
-      m_maxHP(maxHP), m_hp(maxHP), m_coins(0) 
+      m_maxHP(maxHP), m_hp(maxHP), m_coins(10) 
 {}
   
   

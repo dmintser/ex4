@@ -1,0 +1,168 @@
+Welcome to the world of MtmChkin!!!
+Please enter team size: (2-6)
+Please insert the player name and class: 
+You have entered an invalid class. Please try again.
+Please insert the player name and class: 
+
+-------------------------------------------
+Start of round 1:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            2         5     100   2     Healer  
+2          Pikachu         2         5     100   2     Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            2         5     100   2     Healer  
+2          Pikachu         2         5     100   2     Healer  
+
+-------------------------------------------
+Start of round 2:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            3         5     100   4     Healer  
+2          Pikachu         3         5     100   4     Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            3         5     100   4     Healer  
+2          Pikachu         3         5     100   4     Healer  
+
+-------------------------------------------
+Start of round 3:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            4         5     100   6     Healer  
+2          Pikachu         4         5     100   6     Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            4         5     100   6     Healer  
+2          Pikachu         4         5     100   6     Healer  
+
+-------------------------------------------
+Start of round 4:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            5         5     100   8     Healer  
+2          Pikachu         5         5     100   8     Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            5         5     100   8     Healer  
+2          Pikachu         5         5     100   8     Healer  
+
+-------------------------------------------
+Start of round 5:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            6         5     100   10    Healer  
+2          Pikachu         6         5     100   10    Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            6         5     100   10    Healer  
+2          Pikachu         6         5     100   10    Healer  
+
+-------------------------------------------
+Start of round 6:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            7         5     100   12    Healer  
+2          Pikachu         7         5     100   12    Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            7         5     100   12    Healer  
+2          Pikachu         7         5     100   12    Healer  
+
+-------------------------------------------
+Start of round 7:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            8         5     100   14    Healer  
+2          Pikachu         8         5     100   14    Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            8         5     100   14    Healer  
+2          Pikachu         8         5     100   14    Healer  
+
+-------------------------------------------
+Start of round 8:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            9         5     100   16    Healer  
+2          Pikachu         9         5     100   16    Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            9         5     100   16    Healer  
+2          Pikachu         9         5     100   16    Healer  
+
+-------------------------------------------
+Start of round 9:
+
+Start of Itay's turn: 
+Player Itay has defeated Germlin and rose 1 Level!
+Start of Pikachu's turn: 
+Player Pikachu has defeated Germlin and rose 1 Level!
+The Game has ended!!!
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            10        5     100   18    Healer  
+2          Pikachu         10        5     100   18    Healer  
+
+The current ranking of the Team:
+Ranking    Player Name     Level     Force HP    Coins Job
+1          Itay            10        5     100   18    Healer  
+2          Pikachu         10        5     100   18    Healer  

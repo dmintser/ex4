@@ -25,8 +25,8 @@ class Mtmchkin{
     Player** m_leaderBoaed;
     int m_start;
     int m_end;
-    std::queue<Card*> *m_deck;
-    std::queue<Player*> *m_players;
+    std::queue<Card*> m_deck;
+    std::queue<Player*> m_players;
 
 public:
     

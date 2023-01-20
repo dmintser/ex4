@@ -1,7 +1,7 @@
 #include "Dragon.h"
 
 Dragon::Dragon() :
-    Card(CardType::Dragon,CardStats(5,2,10,0,0,0,0))
+    Card(CardType::Dragon,CardStats(25,2,10,0,0,0,0))
 {}
 
 /*std::ostream& operator<<(std::ostream& os, Dragon &dragon)

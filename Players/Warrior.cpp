@@ -9,7 +9,7 @@ Warrior::Warrior(const std::string name):
 
 int Warrior::getAttackStrength() const
 {
-    return (this->getAttackStrength()+this->getLevel());
+    return (Player::getAttackStrength()+getLevel());
 }
 
 /*std::ostream& operator<<(std::ostream& os, const Player& player)
