@@ -7,14 +7,12 @@
 
 
 Player::Player(const std::string name, int maxHP, int force)
-    : m_name(new char[name.length() + 1]), m_level(1), m_force(force),
-      m_maxHP(maxHP), m_hp(maxHP), m_coins(0) {
-  int nameLen = name.length();
-  for (int i = 0; i < nameLen; i++) {
-    m_name[i] = name[i];
-  }
-  m_name[name.length()] = '\0';
-}
+    : m_name(name), m_level(1), m_force(force),
+      m_maxHP(maxHP), m_hp(maxHP), m_coins(0) 
+{}
+  
+  
+
 
 Player::Player(const Player &other)
     : m_name(new char[other.m_name.length() + 1]), m_level(other.m_level),

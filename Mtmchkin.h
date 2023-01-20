@@ -3,7 +3,6 @@
 
 #include <string>
 #include <queue>
-#include <deque>
 #include "utilities.h"
 #include "Players/Player.h"
 #include "Cards/Card.h"
