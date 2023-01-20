@@ -33,43 +33,47 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     { 
         printInsertPlayerMessage();
         std::cin>>name;
+        std::cerr << name << std::endl;
         while(!valid_name(name))
         {
-
+            std::cerr << "invalid name" << std::endl;
             printInvalidName();
             std::cin>>name;
         }
+        std::cerr << name << std::endl;
         
         while(!valid_class(n_class))
         {
             printInvalidClass();
             std::cin>>n_class;
         }
+        std::cerr << n_class << std::endl;
         if(n_class=="Ninja")
         {
-            Ninja* ninja = new Ninja(name);
+            std::cerr<<"ninja!"<<std::endl;
+            Player* ninja = new Ninja(name);
             m_leaderBoaed[i]= ninja;
             m_players->push(ninja);
-            
+            std::cerr<<"pushed!"<<std::endl;
         }
                 
         if(n_class=="Healer")
         {
             std::cerr<<"healer!"<<std::endl;
             Player* healer = new Healer(name);
-            std::cerr<<*healer<<std::endl;
             m_leaderBoaed[i]= healer;
-            m_players->push((Player*)healer);
+            m_players->push(healer);
             std::cerr<<"pushed!"<<std::endl;
             
         }
         
         if(n_class=="Warrior")
         {
-            Warrior* warrior = new Warrior(name);
+            std::cerr<<"warrior!"<<std::endl;
+            Player* warrior = new Warrior(name);
             m_leaderBoaed[i]= warrior;
             m_players->push(warrior);
-            
+            std::cerr<<"pushed!"<<std::endl;
         }
 
     }
@@ -79,6 +83,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     std::string curr_card;
     if(source.is_open())
     {
+        std::cerr << "opend" << std::endl;
         while(std::getline(source, curr_card))
         {
             deckLine++;
@@ -177,8 +182,9 @@ void Mtmchkin::playRound()
     int num_players=m_players->size();
     for(int i=0;i<num_players;i++)
     {
-        
-        Player* to_play=m_players->front();
+        std::cerr << (*(m_players->front())) << std::endl;
+        Player* to_play = m_players->front();
+        std::cerr << *to_play << std::endl;
         printTurnStartMessage(to_play->getName());
         m_players->pop();
         Card* to_encounter=m_deck->front();
@@ -232,6 +238,7 @@ bool Mtmchkin::isGameOver() const
 
 bool valid_name(std::string name)
 {
+    //std::cerr << "<" << name << ">" <<std::endl;
     int len = name.length();
     if(!len||len>15)
     {
@@ -240,8 +247,9 @@ bool valid_name(std::string name)
 
     for(int i=0; i<len; i++)
     {
-        if(!((name[i]>'a'&&name[i]<'z')||(name[i]>'A'&&name[i]<'Z')))
+        if(!((name[i]>='a'&&name[i]<='z')||(name[i]>='A'&&name[i]<='Z')))
         {
+            //std::cerr << "11111" << std::endl;
             return false;
         }
     }
