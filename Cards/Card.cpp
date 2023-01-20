@@ -16,11 +16,11 @@ void Card::applyEncounter(Player &player) const
       {
         player.levelUp();
         player.addCoins(m_stats.loot);
-        printWinBattle(player.getName(), "Germlin");
+        printWinBattle(player.getName(), "Gremlin");
         break;
       }
       player.damage(m_stats.hpLossOnDefeat);
-      printLossBattle(player.getName(), "Germlin");
+      printLossBattle(player.getName(), "Gremlin");
       break;
 
     case CardType::Witch:
@@ -33,7 +33,10 @@ void Card::applyEncounter(Player &player) const
         break;
       }
       player.damage(m_stats.hpLossOnDefeat);
-      player.buff(-1);
+      if(player.getForce()>0)
+      {
+        player.buff(-1);
+      }
       printLossBattle(player.getName(), "Witch");
       break;
 

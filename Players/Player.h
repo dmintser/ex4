@@ -30,6 +30,7 @@ public:
   std::string getClass() const;
   int getLevel() const;
   int getHP() const;
+  int getForce() const;
   void buff(const int forcePoints);
   virtual void heal(const int healPoint);
   void damage(const int damagePoints);

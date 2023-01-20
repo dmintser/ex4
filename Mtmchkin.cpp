@@ -37,7 +37,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
         //std::cerr << name << std::endl;
         while(!valid_name(name))
         {
-            std::cerr << "invalid name" << std::endl;
+            //std::cerr << "invalid name" << std::endl;
             printInvalidName();
             std::cin>>name;
         }
@@ -55,7 +55,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
             Player* ninja = new Ninja(name);
             m_leaderBoaed[i]= ninja;
             m_players.push(ninja);
-            std::cerr<<"pushed!"<<std::endl;
+            //std::cerr<<"pushed!"<<std::endl;
         }
                 
         if(n_class=="Healer")
@@ -151,7 +151,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     {
         throw DeckFileNotFound();
     }
-    
+
 
 }
 Mtmchkin::~Mtmchkin()

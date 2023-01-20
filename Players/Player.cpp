@@ -109,6 +109,11 @@ std::string Player::getName() const
   return m_name;
 }
 
+int Player::getForce() const
+{
+  return m_force;
+}
+
 std::string Player::getClass() const
 {
   return m_class;
