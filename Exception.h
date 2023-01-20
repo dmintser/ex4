@@ -15,7 +15,7 @@ class DeckFileNotFound : public std::exception
 
 class DeckFileFormatError : public std::exception
 {
-    std::string m_error ="File format error in line ";
+    std::string m_error ="Deck File Error: File format error in line ";
     public:
     DeckFileFormatError(int LineNumber)
     {

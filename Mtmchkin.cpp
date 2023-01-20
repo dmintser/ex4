@@ -3,82 +3,6 @@
 Mtmchkin::Mtmchkin(const std::string &fileName):
     m_N_rounds(0)  
 {
-    printStartGameMessage();
-    int input;
-    printEnterTeamSizeMessage();
-    while(!(std::cin>>input)&&(input<2||input>6))
-    {
-        printInvalidTeamSize();
-    }
-    //std::queue<Player*> players_queue;
-    //m_players = &players_queue;
-    //std::cerr << "adress 1:" << m_players << std::endl;
-    //std::queue<Card*> cards_queue;
-    //m_deck = & cards_queue;
-    m_size=input;
-    m_start = 0;
-    m_end = input - 1;
-    Player** leaderBoard;
-    try{
-        leaderBoard = new Player*[input];//throw bad alloc
-    }
-    catch(std::bad_alloc &e)
-    {
-        std::cout << "BAD ALLOC" << std::endl;
-        throw;
-    }
-    m_leaderBoaed=leaderBoard;
-    std::string name; 
-    std::string n_class;
-    for(int i=0;i<input;i++)
-    { 
-        printInsertPlayerMessage();
-        std::cin>>name;
-        //std::cerr << name << std::endl;
-        while(!valid_name(name))
-        {
-            //std::cerr << "invalid name" << std::endl;
-            printInvalidName();
-            std::cin>>name;
-        }
-        //std::cerr << name << std::endl;
-        std::cin>>n_class;
-        while(!valid_class(n_class))
-        {
-            printInvalidClass();
-            std::cin>>n_class;
-        }
-        //std::cerr << n_class << std::endl;
-        if(n_class=="Ninja")
-        {
-            //std::cerr<<"ninja!"<<std::endl;
-            Player* ninja = new Ninja(name);
-            m_leaderBoaed[i]= ninja;
-            m_players.push(ninja);
-            //std::cerr<<"pushed!"<<std::endl;
-        }
-                
-        if(n_class=="Healer")
-        {
-            //std::cerr<<"healer!"<<std::endl;
-            Player* healer = new Healer(name);
-            m_leaderBoaed[i]= healer;
-            m_players.push(healer);
-            //std::cerr<<healer<<std::endl;
-            
-        }
-        
-        if(n_class=="Warrior")
-        {
-            //std::cerr<<"warrior!"<<std::endl;
-            Player* warrior = new Warrior(name);
-            m_leaderBoaed[i]= warrior;
-            m_players.push(warrior);
-            //std::cerr<<"pushed!"<<std::endl;
-        }
-
-    }
-
     std::ifstream source(fileName);
     int deckLine=0;
     std::string curr_card;
@@ -151,6 +75,84 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
     {
         throw DeckFileNotFound();
     }
+    printStartGameMessage();
+    int input;
+    printEnterTeamSizeMessage();
+    while(!(std::cin>>input)&&(input<2||input>6))
+    {
+        printInvalidTeamSize();
+    }
+    //std::queue<Player*> players_queue;
+    //m_players = &players_queue;
+    //std::cerr << "adress 1:" << m_players << std::endl;
+    //std::queue<Card*> cards_queue;
+    //m_deck = & cards_queue;
+    m_size=input;
+    m_start = 0;
+    m_end = input - 1;
+    Player** leaderBoard;
+    try{
+        leaderBoard = new Player*[input];//throw bad alloc
+    }
+    catch(std::bad_alloc &e)
+    {
+        std::cout << "BAD ALLOC" << std::endl;
+        throw;
+    }
+    m_leaderBoaed=leaderBoard;
+    std::string name; 
+    std::string n_class;
+    for(int i=0;i<input;i++)
+    { 
+        printInsertPlayerMessage();
+        std::cin>>name;
+        //std::cerr << name << std::endl;
+        while(!valid_name(name))
+        {
+            //std::cerr << "invalid name" << std::endl;
+            printInvalidName();
+            std::cin>>name;
+        }
+        //std::cerr << name << std::endl;
+        std::cin>>n_class;
+        while(!valid_class(n_class))
+        {
+            printInvalidClass();
+            std::cin>>name;
+            std::cin>>n_class;
+        }
+        //std::cerr << n_class << std::endl;
+        if(n_class=="Ninja")
+        {
+            //std::cerr<<"ninja!"<<std::endl;
+            Player* ninja = new Ninja(name);
+            m_leaderBoaed[i]= ninja;
+            m_players.push(ninja);
+            //std::cerr<<"pushed!"<<std::endl;
+        }
+                
+        if(n_class=="Healer")
+        {
+            //std::cerr<<"healer!"<<std::endl;
+            Player* healer = new Healer(name);
+            m_leaderBoaed[i]= healer;
+            m_players.push(healer);
+            //std::cerr<<healer<<std::endl;
+            
+        }
+        
+        if(n_class=="Warrior")
+        {
+            //std::cerr<<"warrior!"<<std::endl;
+            Player* warrior = new Warrior(name);
+            m_leaderBoaed[i]= warrior;
+            m_players.push(warrior);
+            //std::cerr<<"pushed!"<<std::endl;
+        }
+
+    }
+
+    
 
 
 }
