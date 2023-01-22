@@ -17,7 +17,7 @@
 #include "Cards/Treasure.h"
 #include "Players/Ninja.h"
 #include "Players/Healer.h"
-#include "Players/Warriror.h"
+#include "Players/Warrior.h"
 #include "Exception.h"
 #include <algorithm>
 #include <sstream>

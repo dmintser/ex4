@@ -158,7 +158,7 @@ Mtmchkin::Mtmchkin(const std::string &fileName):
 }
 Mtmchkin::~Mtmchkin()
 {
-    delete m_leaderBoaed;
+    delete[] m_leaderBoaed;
     while((!m_deck.empty()))
     {
         Card* to_delete=m_deck.front();

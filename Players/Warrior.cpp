@@ -1,4 +1,4 @@
-#include "Warriror.h"
+#include "Warrior.h"
 
 Warrior::Warrior(const std::string name):
     Player(name)

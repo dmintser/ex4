@@ -16,7 +16,7 @@
 #include "Cards/Witch.h"
 #include "Players/Ninja.h"
 #include "Players/Healer.h"
-#include "Players/Warriror.h"
+#include "Players/Warrior.h"
 
 class Mtmchkin{
 
